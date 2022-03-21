@@ -38,9 +38,6 @@ from selenium.webdriver.common.keys import Keys
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
 
-@app.route('/')
-def home():
-    return "Hello"
 
 @app.route("/sms", methods=['GET', 'POST'])
 def sms_ahoy_reply():
