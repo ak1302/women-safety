@@ -6,23 +6,17 @@ anaconda-navigator==1.10.0
 anaconda-project==0.8.3
 apiai==1.2.3
 argh==0.26.2
-astroid @ file:///C:/ci/astroid_1592487315634/work
 astropy==4.0.2
 astunparse==1.6.3
 async-generator==1.10
 async-timeout==3.0.1
 atomicwrites==1.4.0
-Babel @ file:///tmp/build/80754af9/babel_1605108370292/work
 backcall==0.2.0
 backports.functools-lru-cache==1.6.1
 backports.shutil-get-terminal-size==1.0.0
 backports.tempfile==1.0
 backports.weakref==1.0.post1
-bcrypt @ file:///C:/ci/bcrypt_1597936263757/work
-beautifulsoup4 @ file:///tmp/build/80754af9/beautifulsoup4_1601924105527/work
-bitarray @ file:///C:/ci/bitarray_1605065210072/work
 bkcharts==0.2
-bleach @ file:///tmp/build/80754af9/bleach_1600439572647/work
 blis==0.7.4
 bokeh @ file:///C:/ci/bokeh_1603297934731/work
 boto==2.49.0
