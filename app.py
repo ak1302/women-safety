@@ -23,6 +23,9 @@ from selenium.webdriver.common.keys import Keys
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
 
+GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
+CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+
 @app.route('/')
 def index():
     return "Hello world"
@@ -37,17 +40,16 @@ def sms_ahoy_reply():
     dest = request.form.get('des')
 
     # Start our response
-
-
-
-
-
-    from selenium import webdriver
+    
     
     # selenium webdriver path in your system...
-    service = Service(executable_path=ChromeDriverManager().install())
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.binary_location = GOOGLE_CHROME_PATH
+    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 
-    driver = webdriver.Chrome(service=service)
+    # service = Service(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 
     driver.get('https://www.google.com/maps/dir///@27.9107022,78.0760799,15z/data=!4m2!4m1!3e0')
 
