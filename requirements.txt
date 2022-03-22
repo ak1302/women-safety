@@ -28,7 +28,6 @@ chroma-py==0.1.0.dev1
 citipy==0.0.5
 clang==5.0
 click==7.1.2
-clyent==1.2.2
 colour==0.1.5
 comtypes==1.1.7
 conda==4.9.2
