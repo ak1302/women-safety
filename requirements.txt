@@ -1,4 +1,7 @@
 flask
 numpy
 sklearn
+selenium
 gunicorn
+pandas
+webdriver_manager

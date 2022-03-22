@@ -4,26 +4,11 @@
 # Download the twilio-python library from twilio.com/docs/libraries/python
 
 from flask import Flask, request, jsonify
-from twilio.twiml.messaging_response import MessagingResponse
 
-from twilio.rest import Client
-from tkinter import *
 import time
 from selenium import webdriver
-import csv
 import numpy as np
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeRegressor
-from selenium.webdriver.common.keys import Keys
-from flask import Flask, request
-from twilio.twiml.messaging_response import MessagingResponse
 
-
-import speech_recognition as speech
-import pickle
-from tkinter import *
-import time
 from selenium import  webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -207,33 +192,6 @@ def sms_ahoy_reply():
     print(url_current)
     return jsonify({'safest route': url_current})
 
-
-    label3 = Label(text = final_result,font= 50)
-    label3.place(x=400,y=380)
-
-    # your twilio auth_token and account_sid...
-    account_sid = 'AC3b2160df9122f450dead692e51dff8d4'
-    auth_token = 'ea79b13fb53fdc8e85565239a9003d81'
-    client = Client(account_sid, auth_token)
-
-    message = client.messages.create(
-        body="Safest route between " +source + " and " +des + " will be via " +list_of_via_roads_final2[c] + "\n" +"The url is: " + url_current,
-        
-        # your twilio number...
-        from_='+17069205692',
-        
-        # user's whatsapp number...
-        to='+918108231625'
-    )
-
-    # return list_of_via_roads_final2[c]
-
-
-    # Add a message
-    # resp.message("Ahoy! Thanks so much for your message.")
-    resp.message("Ahoy")
-
-    return str(resp)
 
 
 if __name__ == "__main__":
