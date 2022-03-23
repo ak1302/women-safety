@@ -40,9 +40,9 @@ def sms_ahoy_reply():
 
     
     # selenium webdriver path in your system...
-    service = Service(executable_path=ChromeDriverManager().install())
+    # service = Service(executable_path=ChromeDriverManager().install())
 
-    driver = webdriver.Chrome(service=service)
+    driver = webdriver.Chrome()
 
     driver.get('https://www.google.com/maps/dir///@27.9107022,78.0760799,15z/data=!4m2!4m1!3e0')
 
