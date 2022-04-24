@@ -38,6 +38,8 @@ def sms_ahoy_reply():
     # dest = request.form.get('des')
     src = "iit dhanbad"
     dest = "dhanbad junction"
+    GOOGLE_CHROME_BIN = '/usr/bin/google-chrome'
+    CHROMEDRIVER_PATH = '/usr/bin/chromedriver'
 
     # Start our response
     chrome_options = webdriver.ChromeOptions()
@@ -47,7 +49,8 @@ def sms_ahoy_reply():
 
     # chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-dev-shm-usage")
-    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+    # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=chrome_options)
 
     
         # selenium webdriver path in your system...
