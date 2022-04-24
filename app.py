@@ -8,6 +8,7 @@ from flask import Flask, request, jsonify
 import time
 from selenium import webdriver
 import numpy as np
+import os
 
 from selenium import  webdriver
 from selenium.webdriver.chrome.service import Service
@@ -39,12 +40,19 @@ def sms_ahoy_reply():
     dest = "dhanbad junction"
 
     # Start our response
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location=os.environ.get("GOOGLE_CHROME_BIN")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
     
         # selenium webdriver path in your system...
-    service = Service(executable_path=ChromeDriverManager().install())
+    # service = Service(executable_path=ChromeDriverManager().install())
 
-    driver = webdriver.Chrome(service=service)
+    # driver = webdriver.Chrome(service=service)
 
     driver.get('https://www.google.com/maps/dir///@27.9107022,78.0760799,15z/data=!4m2!4m1!3e0')
 
