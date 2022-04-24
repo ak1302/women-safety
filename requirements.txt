@@ -5,3 +5,4 @@ selenium
 gunicorn
 pandas
 webdriver_manager
+urllib3
