@@ -24,8 +24,8 @@ app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
 
 @app.route('/')
-def index():
-    return "Hello world"
+# def index():
+    # return "Hello world"
 
 
 # @app.route("/sms", methods=['GET', 'POST'])
