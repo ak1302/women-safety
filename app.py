@@ -24,25 +24,27 @@ app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
 
 @app.route('/')
-def index():
-    return "Hello world"
+# def index():
+    # return "Hello world"
 
 
-@app.route("/sms", methods=['GET', 'POST'])
+# @app.route("/sms", methods=['GET', 'POST'])
 def sms_ahoy_reply():
     """Respond to incoming messages with a friendly SMS."""
 
     # body = request.values.get('Body', None)
-    src = request.form.get('src')
-    dest = request.form.get('des')
+    # src = request.form.get('src')
+    # dest = request.form.get('des')
+    src = "iit dhanbad"
+    dest = "dhanbad junction"
 
     # Start our response
 
     
-    # selenium webdriver path in your system...
-    # service = Service(executable_path=ChromeDriverManager().install())
+        # selenium webdriver path in your system...
+    service = Service(executable_path=ChromeDriverManager().install())
 
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(service=service)
 
     driver.get('https://www.google.com/maps/dir///@27.9107022,78.0760799,15z/data=!4m2!4m1!3e0')
 
@@ -151,7 +153,7 @@ def sms_ahoy_reply():
                 row.pop(0)
                 #print(row)
                 #print(row[0],row[1],row[2],row[3],row[4],row[5],row[6])
-                A[i] = regressor.predict([[row[0], row[1], row[2], row[3], row[4], row[5], row[6]]])
+                A[i] = regressor.predict([[row[0], row[1], row[2], row[3]]])
 
     #             print(A[i])
                 b = b + 1
